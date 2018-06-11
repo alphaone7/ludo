@@ -660,7 +660,45 @@ function rolldice() {
 						}
 					}
 
-					else if(tokenLockerA == 1 && tokenAout == 0) {
+					else if(tokenLockerA == 1 && tokenAout == 0 && pos["A1"] == -1 && moveA2max < diceval) {
+
+						if(diceval == 6) {
+
+							playerTurn = "A";
+
+							releaseToken("A", "A1");
+
+						}
+
+						else {
+
+							playerTurn = "B";
+
+							finish();
+							
+						}
+					}
+
+					else if(tokenLockerA == 1 && tokenAout == 0 && pos["A2"] == -1 && moveA1max < diceval) {
+
+						if(diceval == 6) {
+
+							playerTurn = "A";
+
+							releaseToken("A", "A2");
+
+						}
+
+						else {
+
+							playerTurn = "B";
+
+							finish();
+							
+						}
+					}
+
+					else if(tokenLockerA == 1 && tokenAout == 0 && (moveA1max >= diceval || moveA2max >= diceval)) {
 
 						if(diceval == 6) {
 
@@ -818,7 +856,45 @@ function rolldice() {
 						}
 					}
 
-					else if(tokenLockerB == 1 && tokenBout == 0) {
+					else if(tokenLockerB == 1 && tokenBout == 0 && pos["B1"] == -1 && moveB2max < diceval) {
+
+						if(diceval == 6) {
+
+							playerTurn = "B";
+
+							releaseToken("B", "B1");
+
+						}
+
+						else {
+
+							playerTurn = "A";
+
+							finish();
+							
+						}
+					}
+
+					else if(tokenLockerB == 1 && tokenBout == 0 && pos["B2"] == -1 && moveB1max < diceval) {
+
+						if(diceval == 6) {
+
+							playerTurn = "B";
+
+							releaseToken("B", "B2");
+
+						}
+
+						else {
+
+							playerTurn = "A";
+
+							finish();
+							
+						}
+					}
+
+					else if(tokenLockerB == 1 && tokenBout == 0 && (moveB1max >= diceval || moveB2max >= diceval)) {
 
 						if(diceval == 6) {
 
@@ -1003,5 +1079,3 @@ function resetleave() {
 	text.style.right= "-2vh";
 	text.style.transition= "right 0.7s";
 }
-
-/* Releasing of token when board token is in end zone */
