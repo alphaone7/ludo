@@ -91,7 +91,7 @@ function finish() {
 
 	if(pos["B1"] == 13) {
 		tokenBout += 1;
-		boardA = "B2";
+		boardB = "B2";
 		pos["B1"] = 30;
 		$("#tokenB1").fadeOut(500);
 		$("#tokenB1").animate({ top: '51vh', left: '99.75vh'}, 0);
@@ -100,7 +100,7 @@ function finish() {
 
 	if(pos["B2"] == 13) {
 		tokenBout += 1;
-		boardA = "B1";
+		boardB = "B1";
 		pos["B2"] = 31;
 		$("#tokenB2").fadeOut(500);
 		$("#tokenB2").animate({ top: '51vh', left: '109.75vh'}, 0);
@@ -1003,3 +1003,5 @@ function resetleave() {
 	text.style.right= "-2vh";
 	text.style.transition= "right 0.7s";
 }
+
+/* Releasing of token when board token is in end zone */
