@@ -162,7 +162,7 @@ body {
 
 #center {
 	position: relative;
-	top: -112vh; /* -106vh; */
+	top: -106vh;
 	left: 25.7vh;
 	text-align: center;
 	width: 30.4vh;

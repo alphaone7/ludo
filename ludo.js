@@ -4,7 +4,7 @@ var tokenLockerA = 2, tokenLockerB = 2, tokenAout = 0, tokenBout = 0, boardA = "
 
 var lockerADisplay = document.getElementById("a").getElementsByTagName("h1")[0], lockerBDisplay = document.getElementById("b").getElementsByTagName("h1")[0],
 	playerTurnDisplay = document.getElementsByTagName("LI")[0], diceDisplay = document.getElementById("rolled").getElementsByTagName("img")[0],
-	diceInput = document.getElementById("dice"), resultDisplay = document.getElementById("result");
+	resultDisplay = document.getElementById("result");
 
 var a1 = document.getElementById("tokenA1"), a2 = document.getElementById("tokenA2"), b1 = document.getElementById("tokenB1"),
 	b2 = document.getElementById("tokenB2");
@@ -606,21 +606,7 @@ function rolldice() {
 
 	fin = true;
 
-	if(diceInput.value == "") {
-
-		diceval = Math.floor(Math.random()*6+1);
-
-	}
-
-	else {
-
-		diceval = Number(diceInput.value);
-
-	}
-
-	if(diceval>6 || diceval < 1) { alert("Enter a number between 1 and 6"); finish(); }
-
-	else {
+	diceval = Math.floor(Math.random()*6+1);
 
 	switch(diceval) {
 
@@ -1032,8 +1018,6 @@ function rolldice() {
 
 				}
 		}
-	}
-
 }
 
 function playAgain() {
@@ -1053,7 +1037,6 @@ function playAgain() {
 	$("#tokenB1").animate({ top: '72vh', left: '99.75vh'}, 1000);
 	$("#tokenB2").animate({ top: '72vh', left: '109.75vh'}, 1000);
 	diceDisplay.src = "";
-	diceInput.value = "";
 	playerTurnDisplay.innerHTML = "TURN of Player A";
 
 }
